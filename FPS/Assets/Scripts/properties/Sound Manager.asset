@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b41ece6c402aa3488c1d3696832e21f, type: 3}
+  m_Name: Sound Manager
+  m_EditorClassIdentifier: 
+  footStepsStone:
+  - {fileID: 8300000, guid: 9097384d61c25844e9f324b42235d24b, type: 3}
+  - {fileID: 8300000, guid: cfc5534a322c3a44aa3cba4df50cf284, type: 3}
+  - {fileID: 8300000, guid: 8c7f913741c16f847a96168c454c295f, type: 3}
+  footStepsWood:
+  - {fileID: 8300000, guid: 17c8fff36f83c184280a3368e1eca478, type: 3}
+  - {fileID: 8300000, guid: 3d83a059612d87c47be0cad1a9b70a60, type: 3}
+  - {fileID: 8300000, guid: fc839a50362332b488a17e698e4f8075, type: 3}
