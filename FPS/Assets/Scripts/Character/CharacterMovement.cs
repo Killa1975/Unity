@@ -36,22 +36,37 @@ public class CharacterMovement : MonoBehaviour
 
     public void RotationNormal()
     {
-        if(!characterStatus.isAiming)
+        if ((!characterStatus.isAiming) && (!anim.GetBool("FPS")))
 
         {
+            Debug.Log("Aim");
             rotationDirection = moveDirection;
+            {
+
+                Vector3 targetDir = rotationDirection;
+                targetDir.y = 0;
+
+                if (targetDir == Vector3.zero)
+                    targetDir = transform.forward;
+
+                Quaternion lookDir = Quaternion.LookRotation(targetDir);
+                Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotationSpeed);
+                transform.rotation = targetRot;
+            }
+        }
+        if (anim.GetBool("FPS") || (characterStatus.isAiming))
+        {
+
+            Vector3 targetDir = rotationDirection;
+            targetDir.y = 0;
+            rotationDirection = CameraTransform.forward;
+            Quaternion lookDir = Quaternion.LookRotation(targetDir);
+            Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotationSpeed);
+            transform.rotation = targetRot;
         }
 
-        Vector3 targetDir = rotationDirection;
-        targetDir.y = 0;
-
-        if (targetDir == Vector3.zero)
-            targetDir = transform.forward;
-
-        Quaternion lookDir = Quaternion.LookRotation(targetDir);
-        Quaternion targetRot = Quaternion.Slerp(transform.rotation, lookDir, Time.deltaTime * rotationSpeed);
-        transform.rotation = targetRot;
     }
+
     public bool Ground()
     {
         Vector3 origin = transform.position;

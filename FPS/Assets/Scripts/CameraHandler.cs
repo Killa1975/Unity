@@ -5,14 +5,17 @@ using UnityEngine;
 public class CameraHandler : MonoBehaviour
 {
     public Transform camTrans;
-    
+    public Animator anim;
     public Transform pivot;
     public Transform Character;
     public Transform mTransform;
 
     public CharacterStatus characterStatus;
     public CameraConfig cameraConfig;
+    public CameraConfig fps;
+    public CameraConfig tps;
     public bool leftPivot;
+    public bool FPS;
     public float delta;
 
     public Transform targetLook;
@@ -26,9 +29,20 @@ public class CameraHandler : MonoBehaviour
     public float lookAngle;
     public float titlAngle;
 
+   
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+            {
+           anim.SetBool("FPS", true);
+            FPS = !FPS;
+            }
+
         Tick();
+
+        cameraConfig = FPS ? fps : tps;
+        anim.SetBool("FPS", cameraConfig == fps ? true : false);
     }
 
     void Tick()

@@ -6,7 +6,6 @@ public class CharacterInventory : MonoBehaviour
 {
     public Animator anim;
     public Transform targetLook;
-    public GameObject mCamera;
     public Transform rHand;
 
     public WeaponProperties firstWeapon;
@@ -37,7 +36,6 @@ public class CharacterInventory : MonoBehaviour
             characterIK.r_Hand.localRotation = rotRight;
 
             activeWeapon.targetLook = targetLook;
-            //activeWeapon.cameraMain = mCamera;
             characterInput.weapon = activeWeapon;
             characterIK.l_Hand_Target = activeWeapon.lHandTarget;
             characterIK.activeLeftHand = true;
@@ -60,7 +58,6 @@ public class CharacterInventory : MonoBehaviour
             characterIK.r_Hand.localRotation = rotRight;
 
             activeWeapon.targetLook = targetLook;
-            //activeWeapon.cameraMain = mCamera;
             characterInput.weapon = activeWeapon;
             characterIK.l_Hand_Target = activeWeapon.lHandTarget;
             characterIK.activeLeftHand = true;

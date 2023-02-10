@@ -17,9 +17,18 @@ public class CharacterAnimation : MonoBehaviour
 
 
         if (!characterStatus.isAiming)
+        {
             AnimationNormal();
+        }
         else
+        {
             AnimationAiming();
+        }
+       
+            if (anim.GetBool("FPS"))
+            {
+                AnimationAiming();
+            }
     }
     void AnimationNormal()
     {

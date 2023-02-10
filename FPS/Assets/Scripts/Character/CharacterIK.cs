@@ -101,7 +101,7 @@ public class CharacterIK : MonoBehaviour
         {
             aimPivot.LookAt(targetLook);
 
-            anim.SetLookAtWeight(.50f, .4f, .1f);
+            anim.SetLookAtWeight(.50f, .0f, .1f);
             anim.SetLookAtPosition(targetLook.position);
 
             anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, lh_Weight);
@@ -116,7 +116,7 @@ public class CharacterIK : MonoBehaviour
         }
         else
         {
-            anim.SetLookAtWeight(.3f,.3f,.3f);
+            anim.SetLookAtWeight(.3f,.0f,.3f);
             anim.SetLookAtPosition(targetLook.position);
 
             anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, lh_Weight);
