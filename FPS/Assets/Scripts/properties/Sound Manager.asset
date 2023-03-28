@@ -20,3 +20,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 17c8fff36f83c184280a3368e1eca478, type: 3}
   - {fileID: 8300000, guid: 3d83a059612d87c47be0cad1a9b70a60, type: 3}
   - {fileID: 8300000, guid: fc839a50362332b488a17e698e4f8075, type: 3}
+  footStepsWoodMan:
+  - {fileID: 8300000, guid: a9fd436c9b9f9404ab71391561887e43, type: 3}
+  - {fileID: 8300000, guid: f1d7d9670b7b7cc48813c7d4ae2c77db, type: 3}
+  - {fileID: 8300000, guid: dd06541d584c68d46988b1f82c3f365c, type: 3}
+  - {fileID: 8300000, guid: 482775505b3474042b825612bab466b2, type: 3}
+  - {fileID: 8300000, guid: d9389d6fdc2ed194a98086905400da4f, type: 3}
+  - {fileID: 8300000, guid: 99783b47b8ee6d7439d917537aace35d, type: 3}
+  meatHit:
+  - {fileID: 8300000, guid: db0f8fd1379f06b48a47de3a0cb2e5f6, type: 3}
+  - {fileID: 8300000, guid: 23306c66ede3b4040b8183a2c220a7dc, type: 3}
+  - {fileID: 8300000, guid: 8c6a5d09230c9a8469ecafc4c45beb55, type: 3}
+  - {fileID: 8300000, guid: db91885073b7344439c5a753d8409771, type: 3}
+  - {fileID: 8300000, guid: b30dfc323d4be0a49aea6d82498918c5, type: 3}
+  metalHit:
+  - {fileID: 8300000, guid: 5e654a686f94006428630a14f1f2ce24, type: 3}
+  stoneHit:
+  - {fileID: 8300000, guid: 037769fc33a43c94f91b33979a0961a5, type: 3}
+  - {fileID: 8300000, guid: d22e1b5e63dde7e40bb845ff2efd43b3, type: 3}
+  shell:
+  - {fileID: 8300000, guid: c1fbab647a0e80b4d881a9fff22fd59b, type: 3}
+  - {fileID: 8300000, guid: 74cd087ffcdced64c8ec205ebd2c04ce, type: 3}
+  - {fileID: 8300000, guid: dc2db2e2edaa4a0448ff5b9a1305bea8, type: 3}
+  Breath: {fileID: 8300000, guid: 9a5bba854953012468641035538d9bc3, type: 3}
+  Inventory: {fileID: 8300000, guid: a658604cc7ed53147a8a2a3156be1490, type: 3}

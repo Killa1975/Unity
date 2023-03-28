@@ -8,6 +8,6 @@ public class CharacterStatus : ScriptableObject
 public bool isAiming;
 public bool isSprint;
 public bool isGround;
-    public bool isAimingMove;
+public bool isAimingMove;
 
 }

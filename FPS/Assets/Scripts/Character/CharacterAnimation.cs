@@ -24,17 +24,17 @@ public class CharacterAnimation : MonoBehaviour
         {
             AnimationAiming();
         }
-       
-            if (anim.GetBool("FPS"))
-            {
-                AnimationAiming();
-            }
+
+        if (anim.GetBool("FPS"))
+        {
+            AnimationAiming();
+        }
     }
     void AnimationNormal()
     {
         anim.SetFloat("vertical", characterMovement.moveAmount);
     }
-    
+
     void AnimationAiming()
     {
         float v = characterMovement.vertical;

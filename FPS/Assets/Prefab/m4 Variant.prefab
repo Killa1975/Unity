@@ -271,6 +271,89 @@ CapsuleCollider:
   m_Height: 0.04
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7973817590940453745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780865857326519565}
+  - component: {fileID: 8760840367793406565}
+  - component: {fileID: 7486106271800894961}
+  m_Layer: 0
+  m_Name: M4Pricel
+  m_TagString: Pricel
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1780865857326519565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973817590940453745}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.16981119, z: 0.28890988}
+  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_Children: []
+  m_Father: {fileID: 9222506604180102199}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 180}
+--- !u!20 &8760840367793406565
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973817590940453745}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.01
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &7486106271800894961
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973817590940453745}
+  m_Enabled: 1
 --- !u!1 &9222506603127432836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,10 +1315,11 @@ Transform:
   m_GameObject: {fileID: 9222506604180102198}
   m_LocalRotation: {x: 0.5119612, y: -0.46607062, z: 0.5616039, w: 0.45307267}
   m_LocalPosition: {x: -4.22, y: 24.583542, z: 0.67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.93, y: 0.93, z: 0.93}
   m_Children:
   - {fileID: 9222506604476935534}
   - {fileID: 1610246915608072818}
+  - {fileID: 1780865857326519565}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 99.103, y: -105.15, z: -11.549011}
@@ -1259,16 +1343,16 @@ MonoBehaviour:
   bullet: {fileID: 4239520996906295057, guid: dffd2057a666011418822deb14cc39ba, type: 3}
   muzzleFlash: {fileID: 9026202194100412610}
   audioSource: {fileID: 9222506604180102197}
-  shootClip: {fileID: 8300000, guid: d9b180129d4ec3f458c29e016cb33b1f, type: 3}
+  shootClip: {fileID: 8300000, guid: 7c4466b224d153545b4fbf945ca711ca, type: 3}
   noammoclip: {fileID: 8300000, guid: bf0584e72c4e9da42946903dab5b30bf, type: 3}
   shell: {fileID: 7226678484017877104, guid: 27519783684cea74e80e422c12969f63, type: 3}
   shellPosition: {fileID: 9222506604585748437}
-  hitmarker: {fileID: 0}
   curAmmo: 0
   shooing: 0
   firstShootl: 0
   timer: 0
   delayShoot: 1
+  source: {fileID: 9222506604180102197}
 --- !u!82 &9222506604180102197
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1279,8 +1363,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: c1fbab647a0e80b4d881a9fff22fd59b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.513
   m_Pitch: 1
   Loop: 0

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7785fb4adcd781f499970f849b238161, type: 3}
   m_Name: M4
   m_EditorClassIdentifier: 
-  rHandPos: {x: 0.1, y: -0.046, z: 0.211}
-  rHandRot: {x: 0, y: 0.61, z: -90}
+  rHandPos: {x: 0.024, y: -0.089, z: 0.274}
+  rHandRot: {x: 0, y: -1, z: -72}
   weaponPrefab: {fileID: 9222506604180102198, guid: 5467d94a51d962e4db1096d5ec099525,
     type: 3}
   Weapon_pos: {x: -4.22, y: 24.58354, z: 0.67}
-  Weapon_rot: {x: 99.103, y: -105.15, z: -11.54901}
+  Weapon_rot: {x: 99.103, y: -105.15, z: -15}
+  Aim_pos: {x: 0.1, y: 0.04, z: 0.23}
+  Aim_rot: {x: 0, y: 1.7, z: -72}
   maxAmmo: 30
   damage: 5
   shootSpeed: 500

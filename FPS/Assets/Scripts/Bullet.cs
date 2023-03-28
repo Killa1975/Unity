@@ -16,13 +16,19 @@ public class Bullet : MonoBehaviour
     //public Hitmarker hitmarker;
     public int damage;
     public WeaponProperties weaponProperties;
+    public float force;
+
+    public SoundManager soundManager;
+    public AudioSource source;
 
     void Start()
     {
         lastPos = transform.position;
         Destroy(gameObject, 10f);
         damage = weaponProperties.damage;
-            }
+        
+
+    }
 
     void Update()
     {
@@ -38,12 +44,14 @@ public class Bullet : MonoBehaviour
             {
                 case "Metal":
                     SpawnDecal(hit, metalHitEffect);
+                    source.PlayOneShot(soundManager.metalHit[Random.Range(0, soundManager.metalHit.Length)]);
                     break;
                 case "Sand":
                     SpawnDecal(hit, sandHitEffect);
                     break;
                 case "Stone":
                     SpawnDecal(hit, stoneHitEffect);
+                    source.PlayOneShot(soundManager.stoneHit[Random.Range(0, soundManager.stoneHit.Length)]);
                     break;
                 case "Wood":
                     SpawnDecal(hit, woodHitEffect);
@@ -51,20 +59,26 @@ public class Bullet : MonoBehaviour
                 case "Meat":
                     Meat(hit);
                     SpawnDecal(hit, meatHitEffect[Random.Range(0, meatHitEffect.Length)]);
+                    source.PlayOneShot(soundManager.meatHit[Random.Range(0, soundManager.meatHit.Length)]);
                     break;
             }
             Destroy(gameObject);
             //hitmarker.timeLive = hitmarker.maxTimeLive;
-            
+
         }
         lastPos = transform.position;
     }
 
    public void Meat(RaycastHit hit)
     {
+        
         if (hit.transform.GetComponent<HitPosition>() != null)
         {
             hit.transform.GetComponent<HitPosition>().Damage(damage);
+        }
+        if(hit.rigidbody!=null)
+        {
+            hit.rigidbody.AddForce(-hit.normal * force);
         }
     }
 

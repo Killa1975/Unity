@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour
         {
             
             lastPositionTarget = targetMemory.position;
-            headd.transform.LookAt(target);
+            //headd.transform.LookAt(target);
         }
         enemy = mainTransform.position;
 
@@ -183,9 +183,9 @@ public class EnemyAI : MonoBehaviour
                         {
                             //targetMoment = target;
                             targetMemory = target;
-                            target = null;
+                            target = null; 
+                            Debug.Log("Pox1");
                             break;
-                            Debug.Log("Pox2");
                         }
                     }
                 }

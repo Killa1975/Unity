@@ -24,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
 
 
 
-        Vector3 moveDir = CameraTransform.forward* vertical;
+        Vector3 moveDir = CameraTransform.forward * vertical;
         moveDir += CameraTransform.right * horizontal;
         moveDir.Normalize();
         moveDirection = moveDir;
@@ -39,7 +39,6 @@ public class CharacterMovement : MonoBehaviour
         if ((!characterStatus.isAiming) && (!anim.GetBool("FPS")))
 
         {
-            Debug.Log("Aim");
             rotationDirection = moveDirection;
             {
 
@@ -74,7 +73,7 @@ public class CharacterMovement : MonoBehaviour
         Vector3 dir = -Vector3.up;
         float dis = 0.7f;
         RaycastHit hit;
-        if(Physics.Raycast(origin, dir, out hit, dis))
+        if (Physics.Raycast(origin, dir, out hit, dis))
         {
             Vector3 tp = hit.point;
             transform.position = tp;
@@ -82,5 +81,5 @@ public class CharacterMovement : MonoBehaviour
         }
         return false;
     }
-    
+
 }

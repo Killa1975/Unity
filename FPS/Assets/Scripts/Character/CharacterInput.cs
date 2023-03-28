@@ -9,6 +9,8 @@ public class CharacterInput : MonoBehaviour
     public CharacterIK characterIK;
     public Weapon weapon;
     public Transform targetLook;
+    public CameraHandler cameraHandler;
+
 
     public Animator anim;
     public bool debugAiming;
@@ -21,13 +23,59 @@ public class CharacterInput : MonoBehaviour
     public float distance;
 
     bool reload;
-
+    float vertical;
     public int SelWeapon;
+    public AudioSource source;
+    public SoundManager soundManager;
+    public bool BreathA = true;
+    
+    public int count;
+    public float timer;
 
-    void Start()
+    public GameObject crosshair;
+
+
+    public void Update()
     {
-       
+        if ((Input.GetMouseButtonDown(1)) && (anim.GetBool("FPS")))
+        {
+            count++;  
+        }
+
+        //if ((Input.GetMouseButtonUp(1)) && (anim.GetBool("FPS")))
+        //{
+        //    count++;
+
+        //}
+
+        if (count > 0)
+        {
+            timer += Time.deltaTime;
+        }
+
+        if (timer > 0.5)
+        {
+            count = 0;
+            timer = 0;
+        }
+
+        if (timer < 0.5 && count > 1)
+        {
+            count = 0;
+            timer = 0;
+            anim.SetBool("zoom", true);
+            characterStatus.isAiming = true;
+            characterStatus.isAimingMove = true;
+            crosshair.SetActive(false);
+        }
+        if ((Input.GetMouseButtonUp(1)) && (anim.GetBool("FPS")) && (anim.GetBool("Weapon")))
+        {
+            anim.SetBool("zoom", false);
+            crosshair.SetActive(true);
+        }
+
     }
+
 
     public void InputUpdate()
     {
@@ -35,24 +83,27 @@ public class CharacterInput : MonoBehaviour
         RayCastAiming();
         InputAiming();
         InputSelectWeapon();
+        
+       
     }
 
+    
     public void InputAiming()
     {
-        if (characterInventory.activeWeapon != null && !reload)
+        if (characterInventory.activeWeapon != null && !reload && (anim.GetBool("Weapon")))
         {
 
-            if (Input.GetMouseButton(1) /*&& opportunityToAim*/ )
+            if (Input.GetMouseButton(1) && opportunityToAim  )
             {
                 characterStatus.isAiming = true;
                 characterStatus.isAimingMove = true;
             }
 
-            //if (Input.GetMouseButton(1)/* && !opportunityToAim */)
-            //{
-            //    characterStatus.isAiming = false;
-            //    characterStatus.isAimingMove = true;
-            //}
+            if (Input.GetMouseButton(1) && !opportunityToAim )
+            {
+                characterStatus.isAiming = false;
+                characterStatus.isAimingMove = true;
+            }
 
             if (!Input.GetMouseButton(1))
             {
@@ -67,7 +118,7 @@ public class CharacterInput : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R) && !reload)
             {
-                characterInventory.activeWeapon.firstShootl = true;
+                //characterInventory.activeWeapon.firstShootl = true;
                 characterInventory.activeWeapon.shooing = false;
 
                 characterStatus.isAiming = false;
@@ -102,9 +153,54 @@ public class CharacterInput : MonoBehaviour
         //else
         //    characterStatus.isAiming = isAiming;
 
+        vertical = anim.GetFloat("vertical");
 
-        if (characterStatus.isSprint = Input.GetKey(KeyCode.LeftShift)) ;
+        if ((vertical > 0) && Input.GetKey(KeyCode.LeftShift))
+        {
+            characterStatus.isSprint = true;
+
+            while (BreathA == true)
+            {
+                source.PlayOneShot(soundManager.Breath);
+                BreathA = false;
+            }
+
+            if (source.volume < 0.04)
+            {
+                source.volume = source.volume + ((Time.deltaTime + 1) / 10000);
+            }
+        }
+        else
+        {
+            characterStatus.isSprint = false;
+            
+            if (source.volume < 0.05)
+            {
+                source.volume = source.volume - ((Time.deltaTime + 1) / 5000);
+            }
+            if (source.volume == 0)
+            {
+                source.Stop();
+                BreathA = true;
+            }
+
+
+            //source.Stop();
+            //source.volume = 0;
+        }
+        
+
+        //if (Input.GetKeyUp(KeyCode.LeftShift))
+        //{
+        //    characterStatus.isSprint = false;
+        //}
+
     }
+    //public void Breath()
+    //{
+    //    
+
+    //}
 
 
     public void Reload()
@@ -134,7 +230,6 @@ public class CharacterInput : MonoBehaviour
             {
                 SelWeapon = 3;
                 anim.SetTrigger("Select");
-                Debug.Log("3");
             }
         }
     }
@@ -147,10 +242,11 @@ public class CharacterInput : MonoBehaviour
 
     public void RayCastAiming()
     {
+        //луч при котором убирается ствол
         Debug.DrawLine(transform.position + transform.up * 1.4f, targetLook.position, Color.green) ;
 
-        distance = Vector3.Distance(transform.position + transform.up * 1.4f, targetLook.position);
-            if (distance > 1.5f)
+        distance = Vector3.Distance(transform.position + transform.up * 1f, targetLook.position);
+            if (distance > 1.1f)
                 opportunityToAim = true;
             else opportunityToAim = false;
 

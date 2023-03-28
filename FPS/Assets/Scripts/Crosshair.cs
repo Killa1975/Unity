@@ -25,8 +25,10 @@ public class Crosshair : MonoBehaviour
         if (characterMovement.moveAmount > 0)
             currentSpread = 20 * (5 + characterMovement.moveAmount);
         else currentSpread = 20;
-        Cursor.visible = false;
         CrosshairUpdate();
+
+       
+
     }
     public void CrosshairUpdate()
     {

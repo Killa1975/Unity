@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7785fb4adcd781f499970f849b238161, type: 3}
   m_Name: Deagle
   m_EditorClassIdentifier: 
-  rHandPos: {x: 0.1, y: -0.046, z: 0.211}
-  rHandRot: {x: 0, y: 0.61, z: -90}
+  rHandPos: {x: 0.1, y: -0.045, z: 0.39}
+  rHandRot: {x: 8.682, y: 1.221, z: -72}
   weaponPrefab: {fileID: 8112894106197888663, guid: 2a00b0625134733499cb183130ef60a9,
     type: 3}
   Weapon_pos: {x: 0.54, y: 10.92, z: 0.99}
   Weapon_rot: {x: 0, y: 0, z: 100}
+  Aim_pos: {x: 0.1, y: 0.04, z: 0.32}
+  Aim_rot: {x: 11.42, y: 0, z: -72}
   maxAmmo: 7
   damage: 1000
   shootSpeed: 110

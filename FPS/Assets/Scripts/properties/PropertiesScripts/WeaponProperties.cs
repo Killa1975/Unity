@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 [CreateAssetMenu(menuName = "Weapon/properties")]
 public class WeaponProperties : ScriptableObject
@@ -16,6 +13,9 @@ public class WeaponProperties : ScriptableObject
 
     public Vector3 Weapon_pos;
     public Vector3 Weapon_rot;
+
+    public Vector3 Aim_pos;
+    public Vector3 Aim_rot;
 
 
     public int maxAmmo;

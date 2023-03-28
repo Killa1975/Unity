@@ -15,3 +15,4 @@ MonoBehaviour:
   isAiming: 0
   isSprint: 0
   isGround: 1
+  isAimingMove: 0

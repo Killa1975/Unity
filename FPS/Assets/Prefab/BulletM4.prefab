@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4974057934495567099}
+  - component: {fileID: 6682941203039427269}
   m_Layer: 0
   m_Name: BulletM4
   m_TagString: Untagged
@@ -31,6 +32,120 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6682941203039427269
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239520996906295057}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.139
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1.69
+  MaxDistance: 41.99
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.004014343
+      value: 0.9999924
+      inSlope: -5.919526
+      outSlope: -5.919526
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.088499725
+      value: 0.30779266
+      inSlope: -1.4798815
+      outSlope: -1.4798815
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.23735559
+      value: 0.07556152
+      inSlope: -0.36997038
+      outSlope: -0.36997038
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.97984314
+      value: 0
+      inSlope: -0.029403023
+      outSlope: -0.029403023
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13544674
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4833157735788425458
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,6 +160,7 @@ GameObject:
   - component: {fileID: 2614417331444396805}
   - component: {fileID: 3310087507656237192}
   - component: {fileID: 1170888344335104964}
+  - component: {fileID: 4082051019033117184}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -154,9 +270,11 @@ MonoBehaviour:
   - {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
   woodHitEffect: {fileID: 1000011190285628, guid: beb3acff7ab73944fb8f470f24d74ed3,
     type: 3}
-  hitmarker: {fileID: 0}
   damage: 1
   weaponProperties: {fileID: 11400000, guid: 0ead9e183fa84b84b8ce5b84d4545afa, type: 2}
+  force: 300
+  soundManager: {fileID: 11400000, guid: 19e3e9da4d3326b41aec1456efe1b973, type: 2}
+  source: {fileID: 6682941203039427269}
 --- !u!114 &1170888344335104964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,3 +1580,19 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!54 &4082051019033117184
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833157735788425458}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

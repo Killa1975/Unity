@@ -9,7 +9,6 @@ public class Weapon : MonoBehaviour
     public Transform targetLook;
     public Transform lHandTarget;
 
-    //public GameObject cameraMain;
     public GameObject decal;
     public GameObject bullet;
 
@@ -29,14 +28,14 @@ public class Weapon : MonoBehaviour
     public bool firstShootl;
     public float timer;
     public float delayShoot;
-
+    public AudioSource source;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         //hitmarker = GameObject.Find("CrosshairManager").GetComponent<Hitmarker>();
 
         delayShoot = 60f / weaponProperties.shootSpeed;
-        Debug.Log(delayShoot);
+       
 
     }
 
@@ -51,7 +50,6 @@ public class Weapon : MonoBehaviour
        
             if (firstShootl)
             {
-                Debug.Log("paw");
                 firstShootl = false;
                 Shoot();
                 timer = 0;
@@ -67,8 +65,6 @@ public class Weapon : MonoBehaviour
             
     }
 
-
-        RaycastHit hit;
     }
     public void Shoot()
     {
@@ -83,7 +79,7 @@ public class Weapon : MonoBehaviour
                 shotPoint.LookAt(targetLook);
                 audioSource.PlayOneShot(shootClip);
                 GameObject newBullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-                newBullet.GetComponent<Bullet>().damage = weaponProperties.damage;
+                //newBullet.GetComponent<Bullet>().damage = weaponProperties.damage;
                
                 //newBullet.GetComponent<Bullet>().hitmarker = hitmarker;
             }
@@ -127,6 +123,8 @@ public class Weapon : MonoBehaviour
         newShell.transform.parent = null;
         newShell.GetComponent<Rigidbody>().AddForce(-newShell.transform.forward * Random.Range(80, 120));
         Destroy(newShell, 20);
+
+        
     }
 
 

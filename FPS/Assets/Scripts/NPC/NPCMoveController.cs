@@ -81,7 +81,7 @@ public class NPCMoveController : MonoBehaviour
         else
         {
             Stop();
-            Debug.Log("Stop");
+            //Debug.Log("Stop");
         }
     }
 

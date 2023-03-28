@@ -40,13 +40,21 @@ public class FootSteps : MonoBehaviour
                 {
 
                     case "Stone":
-
+                        if(anim.GetBool("Man"))
+                        {
+                        source.PlayOneShot(soundManager.footStepsStone[Random.Range(0, soundManager.footStepsStone.Length)]);
+                        }
+                        else
                         source.PlayOneShot(soundManager.footStepsStone[Random.Range(0, soundManager.footStepsStone.Length)]);
 
                         break;
 
                     case "Wood":
-
+                        if (anim.GetBool("Man"))
+                        {
+                           
+                        source.PlayOneShot(soundManager.footStepsWoodMan[Random.Range(0, soundManager.footStepsWood.Length)]);
+                        }
                         source.PlayOneShot(soundManager.footStepsWood[Random.Range(0, soundManager.footStepsWood.Length)]);
 
                         break;

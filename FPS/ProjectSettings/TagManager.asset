@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Pricel
+  - Door
+  - Head
+  - SwitcherONOF
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - PostProcessing
   - Enemy
   - Player
-  - 
+  - Head
   - 
   - 
   - 

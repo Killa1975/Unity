@@ -16,10 +16,11 @@ MonoBehaviour:
   pivotSpeed: 9
   Y_rot_speed: 4
   X_rot_speed: 4
-  minAngle: -90
-  maxAngle: 70
-  normalZ: 0.52
-  normalX: -0.14
-  aimZ: -1
-  aimX: 0.4
-  normalY: 2.03
+  minAngle: -60
+  maxAngle: 45
+  normalZ: 0
+  normalX: 0
+  normalY: 0.13
+  aimZ: 0
+  aimX: 0
+  aimY: 0.15

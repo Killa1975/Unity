@@ -14,8 +14,10 @@ public class CameraConfig : ScriptableObject
     public float maxAngle;
     public float normalZ;
     public float normalX;
+    public float normalY;
     public float aimZ;
     public float aimX;
-    public float normalY;
+    public float aimY;
+
 
 }
